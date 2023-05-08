@@ -9,8 +9,8 @@ Triggers:
 
 # Required - Define action configurations.
 Actions:
-  Test:
-    Identifier: aws/build@v1
+  test:
+    Identifier: aws/managed-test@v1.0.0
     Inputs:
       Sources:
         - WorkflowSource
@@ -25,6 +25,6 @@ Actions:
         - Run: php artisan test
       Container:
         Registry: DockerHub
-        Image: php:8.2-fpm
+        Image: devilbox/php-fpm:8.2
     Compute:
       Type: EC2
