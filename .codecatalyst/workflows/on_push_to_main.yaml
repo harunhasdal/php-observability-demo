@@ -21,7 +21,7 @@ Actions:
     Configuration:
       Steps:
         - Run: echo "Testing with composer!"
-        - Run: cd minicpo-php && composer install
+        - Run: cd minicpo-laravel && composer install
         - Run: php artisan test
     Compute:
       Type: EC2
