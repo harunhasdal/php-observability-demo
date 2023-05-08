@@ -23,5 +23,8 @@ Actions:
         - Run: echo "Testing with composer!"
         - Run: cd minicpo-laravel && composer install
         - Run: php artisan test
+      Container:
+        Registry: DockerHub
+        Image: php:8.2-fpm
     Compute:
       Type: EC2
