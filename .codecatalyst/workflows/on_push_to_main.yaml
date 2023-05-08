@@ -1,0 +1,27 @@
+Name: on_push_to_main
+SchemaVersion: "1.0"
+
+# Optional - Set automatic triggers.
+Triggers:
+  - Type: Push
+    Branches:
+      - main
+
+# Required - Define action configurations.
+Actions:
+  Test:
+    Identifier: aws/build@v1
+    Inputs:
+      Sources:
+        - WorkflowSource
+    Outputs:
+      AutoDiscoverReports:
+        Enabled: true
+        ReportNamePrefix: rpt
+    Configuration:
+      Steps:
+        - Run: echo "Testing with composer!"
+        - Run: cd minicpo-php && composer install
+        - Run: php artisan test
+    Compute:
+      Type: EC2
