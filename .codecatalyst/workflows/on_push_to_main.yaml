@@ -28,3 +28,4 @@ Actions:
         Image: devilbox/php-fpm:8.2
     Compute:
       Type: EC2
+    Timeout: 10
